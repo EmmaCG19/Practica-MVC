@@ -1,0 +1,44 @@
+﻿@model MVC_main_layout.Models.UsuarioVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListarDistinto</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row mb-4"></div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <table class="table">
+                    <tr class="text-center">
+                        <th>Id</th>
+                        <th>Nombre</th>
+                    </tr>
+                    @foreach (var usuario in Model.Usuarios)
+                    {
+                        <tr>
+                            <td>@usuario.Id</td>
+                            <td class="text-center">@(String.Concat(usuario.Nombre, " ", usuario.Apellido))</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model MVC_main_layout.Models.UsuarioVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row mb-4"></div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <ul class="list-group text-center">
+                    @foreach (var usuario in Model.Usuarios)
+                    {
+                            <li class="list-group-item bg-info">@usuario.Id</li>
+                            <li class="list-group-item bg-danger">@(String.Concat(usuario.Nombre, " ", usuario.Apellido))</li>
+                    }
+                </ul>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</body>
+</html>
+
