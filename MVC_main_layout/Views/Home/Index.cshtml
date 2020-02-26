@@ -1,18 +1,26 @@
-﻿
+﻿@*@model MVC_main_layout.Models.IndexVM*@
+
 @{
-    Layout = null;
+    ViewBag.Title = "ViewData-Exercise";
+    var escritores = ViewData["escritores"] as List<MVC_main_layout.DAL.Escritor>;
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <meta name="viewport" content="width=device-width = 1" />
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div> 
-        <h1></h1>
+    <div>
+        <ul>
+            @foreach (var esc in escritores)
+            {
+
+                <li>@esc.Nombre</li>
+
+            }
+        </ul>
     </div>
 </body>
 </html>
