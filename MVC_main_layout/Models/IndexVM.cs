@@ -7,5 +7,7 @@ namespace MVC_main_layout.Models
 {
     public class IndexVM
     {
+
+
     }
 }
