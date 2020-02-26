@@ -1,4 +1,5 @@
-﻿
+﻿@model MVC_main_layout.Models.IndexVM
+
 @{
     Layout = null;
 }
@@ -8,13 +9,42 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    
+
     <script src="~/Content/"></script>
     <title>Index</title>
 </head>
 <body>
-    <div> 
-        <h1></h1>
+    <div>
+        <h1>Empresa: @Model.Empresa.Nombre.ToUpper()</h1>
+        @{
+            int antiguedad = Math.Abs(Model.Empresa.FechaDeApertura.Year - DateTime.Now.Year);
+            string color;
+        }
+        <h3>Antiguedad: @antiguedad</h3>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Apellido</th>
+            </tr>
+            @foreach (var cliente in Model.Empresa.Clientes)
+            {
+                if (cliente.TieneDeuda)
+                {
+                    color = "red";
+                }
+                else
+                {
+                    color = "green";
+                }
+
+                <tr style="background-color:@color">
+                    <td>@cliente.Id</td>
+                    <td>@cliente.Apellido</td>
+                </tr>
+            }
+        </table>
     </div>
 </body>
 </html>
