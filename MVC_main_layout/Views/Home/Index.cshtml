@@ -1,6 +1,7 @@
-﻿
+﻿@model MVC_main_layout.Models.IndexVM
+
 @{
-    Layout = null;
+    ViewBag.Title = "Numeros Pares MVC";
 }
 
 <!DOCTYPE html>
@@ -8,13 +9,43 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    
+
     <script src="~/Content/"></script>
-    <title>Index</title>
+    <title>@ViewBag.Title</title>
+    <style>
+        table, th, tr, td {
+            border:1px black solid;
+            border-collapse:collapse;
+        }
+
+        th{
+            background-color: lightblue;
+        }
+
+        td{
+            background-color: orange;
+        }
+
+    </style>
 </head>
 <body>
-    <div> 
-        <h1></h1>
+    <div>
+        @*Imprimir los primeros 20 numeros pares*@
+        <table>
+            <tr>
+                <th>Orden</th>
+                <th>Valor Par</th>
+            </tr>
+            @for (int i = 0; i < Model.CantNumeros; i++)
+            {
+
+                <tr>
+                    <td>@i</td>
+                    <td>@Model.ValoresPares[i]</td>
+                </tr>
+            }
+
+        </table>
     </div>
 </body>
 </html>
