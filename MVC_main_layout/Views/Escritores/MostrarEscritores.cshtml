@@ -1,0 +1,54 @@
+﻿@model MVC_main_layout.Models.EscritoresVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        table{
+            width:50%;
+        }
+
+        img.maquina-escribir {
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+
+    <title>MVCEscritores</title>
+</head>
+<body>
+    <div>
+        <navbar class="nav"><h1>Lista de Escritores</h1></navbar>
+        <table class="table">
+            <tr>
+                <th>Escritor</th>
+                <th>Maquina?</th>
+            </tr>
+            @foreach (var escritor in Model.Escritores)
+            {
+                <tr>
+                    <td><a>@escritor.Nombre</a></td>
+                    <td>
+                        @if (escritor.EscribeAMaquina)
+                        {
+                            <img class="maquina-escribir" src="~/Images/typewriter.png" alt="type_writer.png" />
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
