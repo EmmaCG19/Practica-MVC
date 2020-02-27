@@ -11,9 +11,43 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Histograma</title>
+    <style>
+        table, tr, th, td {
+            border: 1px black solid;
+            border-collapse: collapse;
+        }
+
+        td {
+            height: 15%;
+        }
+
+        .candidato-A {
+            background-color: cornflowerblue;
+        }
+
+        .candidato-B {
+            background-color: greenyellow;
+        }
+
+        .candidato-C {
+            background-color: orangered;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+    <div>
+        @if (ViewBag.Error == null)
+        {
+            @*<table width="100">*@
+            @*<tr><td>*@<table width="@(Model.CandidatoA)%"><tr><td class="candidato-A text-danger">@Model.CandidatoA%</td></tr></table>@*</td></tr>*@
+            @*<tr><td>*@<table width="@(Model.CandidatoB)%"><tr><td class="candidato-B">@Model.CandidatoB%</td></tr></table>@*</td></tr>*@
+            @*<tr><td>*@<table width="@(Model.CandidatoC)%"><tr><td class="candidato-C">@Model.CandidatoC%</td></tr></table>@*</td></tr>*@
+            @*</table>*@
+        }
+        else
+        {
+            <h1>@ViewBag.Error</h1>
+        }
     </div>
 </body>
 </html>

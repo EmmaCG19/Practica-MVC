@@ -9,9 +9,24 @@ namespace MVC_main_layout.Models
     {
         public VotosVM()
         {
-            this.CandidatoA = 30;
-            this.CandidatoB = 40;
-            this.CandidatoC = 30;
+            this.CandidatoA = 10;
+            this.CandidatoB = 30;
+            this.CandidatoC = 60;
+        }
+
+        public VotosVM(int candidatoA, int candidatoB, int candidatoC)
+        {
+
+            //Regla de negocio
+            if (candidatoA + candidatoB + candidatoC <= 100)
+            {
+                this.CandidatoA = candidatoA;
+                this.CandidatoB = candidatoB;
+                this.CandidatoC = candidatoC;
+            }
+            else
+                throw new Exception("Los valores ingresadores no pueden superar el 100%");
+            
         }
 
         public int CandidatoA { get; set; }
