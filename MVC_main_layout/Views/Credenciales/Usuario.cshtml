@@ -1,0 +1,38 @@
+﻿@model MVC_main_layout.Models.UsuarioVM
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav><h1>LOGIN</h1></nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <!--HTML Attributes: uso de clases anónimas. Buscar-->
+            @using (Html.BeginForm("Usuario", "Credenciales", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(u => u.Nombre)
+                    @Html.EditorFor(u => u.Nombre)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(u => u.Password)
+                    @Html.PasswordFor(u => u.Password)
+                </div>
+                <div class="form-group">
+                    <button id="btnIngresar" name="btnIngresar" value="btnIngresar" type="submit" class="btn btn-primary">LET'S GO!</button>
+                </div>
+                <div>
+                    @if (ViewBag.Msg != null)
+                    {
+                        <hr/>
+                        <span style="color:@ViewBag.Color">@ViewBag.Msg</span>
+                        <hr />
+                    }
+                </div>
+            }
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

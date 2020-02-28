@@ -1,23 +1,16 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
-    <title>Index</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div> 
-        <h1></h1>
-    </div>
+    @RenderBody()
+    <footer class="card-footer bg-dark text-white-50">@@Copyright para toda la gilada</footer>
 </body>
 </html>
