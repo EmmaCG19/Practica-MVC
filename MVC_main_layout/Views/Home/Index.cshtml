@@ -1,5 +1,4 @@
-﻿@model MVC_main_layout.Models.IndexVM
-
+﻿
 @{
     Layout = null;
 }
@@ -12,49 +11,13 @@
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
     <title>Index</title>
 </head>
 <body>
-    <div>
-        <h1>Usanding el HTTPGET</h1>
-        @using (Html.BeginForm("Index", "Home", FormMethod.Get, null))
-        {
-            <table>
-                <tr>
-                    <td>Id:</td>
-                    <td>@Html.TextBoxFor(m=> m.Id, new {type="numeric", @class = "form-control" })</td>
-                    <td>@*@Html.TextBoxFor(m => m.Id, new {type="numeric", @class = "form-control" })*@</td>
-                </tr>
-                <tr>
-                    <td>Nombre:</td>
-                    <td>@Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })</td>
-                </tr>
-                <tr>
-                    <td>Apellido:</td>
-                    <td>@Html.TextBoxFor(m => m.Apellido, new { @class = "form-control" })</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        @*@Html.ActionLink("Mostrar Datos", "Index", "Home", new { id = @Model.Id}, new { @class="btn btn-primary"} )*@
-                        <input type="submit" name="mostrar" id="mostrar" value="Mostrar Datos" />
-                    </td>
-                </tr>
-            </table>
-
-        }
-        <div>
-            @if (Model.ClienteSeleccionado != null)
-            {
-                <ul class="list-group">
-                    <li class="list-group-item">@Model.ClienteSeleccionado.Id</li>
-                    <li class="list-group-item">@Model.ClienteSeleccionado.Nombre</li>
-                    <li class="list-group-item">@Model.ClienteSeleccionado.Apellido</li>
-                    <li class="list-group-item" style="color:@((Model.ClienteSeleccionado.TieneDeuda)?"red":"");">@Model.ClienteSeleccionado.TieneDeuda</li>
-                </ul>
-            }
-        </div>
+    <div> 
+        <h1></h1>
     </div>
 </body>
 </html>
